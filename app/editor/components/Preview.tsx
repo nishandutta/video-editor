@@ -3,6 +3,7 @@
 
 import { useAppSelector } from '@/store/hook'
 import { useRef, useState, useEffect } from 'react'
+import ImageOverlay from './ImageOverlay'
 
 export default function Preview() {
   const { preview } = useAppSelector((state) => state.video)
@@ -65,6 +66,7 @@ export default function Preview() {
               {s.text}
             </div>
           ))}
+          <ImageOverlay />
         </>
       ) : (
         <div className='flex items-center justify-center h-full text-gray-400 text-xl'>
