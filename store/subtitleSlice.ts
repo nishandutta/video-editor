@@ -18,33 +18,27 @@ const subtitleSlice = createSlice({
   name: 'subtitle',
   initialState,
   reducers: {
-    addSubtitle: (state) => {
+    addSubtitle: (state, action: PayloadAction<Omit<Subtitle, 'id'>>) => {
       state.push({
         id: nanoid(),
-        text: 'New Subtitle',
-        startTime: 0,
-        endTime: 5,
-        font: 'Arial',
-        size: 16,
-        color: '#FFFFFF',
-        position: 'bottom',
+        ...action.payload,
       })
+    },
+    removeSubtitle: (state, action: PayloadAction<string>) => {
+      return state.filter((subtitle) => subtitle.id !== action.payload)
     },
     updateSubtitle: (
       state,
       action: PayloadAction<{ id: string; field: keyof Subtitle; value: any }>
     ) => {
-      const sub = state.find((s) => s.id === action.payload.id)
-      if (sub) {
-        sub[action.payload.field] = action.payload.value
+      const subtitle = state.find((s) => s.id === action.payload.id)
+      if (subtitle) {
+        ;(subtitle[action.payload.field] as any) = action.payload.value
       }
     },
-    removeSubtitle: (state, action: PayloadAction<string>) =>
-      state.filter((s) => s.id !== action.payload),
   },
 })
 
-export const { addSubtitle, updateSubtitle, removeSubtitle } =
+export const { addSubtitle, removeSubtitle, updateSubtitle } =
   subtitleSlice.actions
-
 export default subtitleSlice.reducer
