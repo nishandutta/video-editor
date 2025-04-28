@@ -4,6 +4,7 @@
 import { useAppSelector } from '@/store/hook'
 import { useRef, useState, useEffect } from 'react'
 import ImageOverlay from './ImageOverlay'
+import ImageUploader from './ImageUploader'
 
 export default function Preview() {
   const { preview } = useAppSelector((state) => state.video)

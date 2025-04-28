@@ -4,7 +4,7 @@ import AudioEditor from './components/AudioEditor'
 import SubtitleEditor from './components/SubtitleEditor'
 import Preview from './components/Preview'
 import RenderControls from './components/RenderControls'
-import ImageOverlay from './components/ImageOverlay'
+import ImageUploader from './components/ImageUploader'
 
 export default function EditorPage() {
   return (
@@ -14,7 +14,8 @@ export default function EditorPage() {
       <Timeline />
       <AudioEditor />
       <SubtitleEditor />
-      <ImageOverlay />
+      {/* <ImageOverlay /> */}
+      <ImageUploader />
       <Preview />
       <RenderControls />
     </div>
