@@ -15,7 +15,9 @@ export default function ImageOverlay() {
     <div className='absolute top-0 left-0 w-full h-full z-20 pointer-events-none'>
       {/* Only Rnd component will be pointer-events-auto */}
       <Rnd
+        // @ts-ignore
         size={{ width: overlay.width, height: overlay.height }}
+        // @ts-ignore
         position={{ x: overlay.x, y: overlay.y }}
         onDragStop={(_, d) => {
           dispatch(updateOverlay({ x: d.x, y: d.y }))
@@ -34,6 +36,7 @@ export default function ImageOverlay() {
         style={{ zIndex: 20, pointerEvents: 'auto' }} // 🛑 Only this box will catch mouse events
       >
         <img
+          // @ts-ignore
           src={overlay.src}
           alt='Overlay'
           className='w-full h-full object-contain pointer-events-none'

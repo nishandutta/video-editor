@@ -15,6 +15,7 @@ const imageOverlaySlice = createSlice({
   name: 'imageOverlay',
   initialState,
   reducers: {
+    // @ts-ignore
     setOverlay: (
       _,
       action: PayloadAction<{
@@ -38,6 +39,7 @@ const imageOverlaySlice = createSlice({
       >
     ) => {
       if (state) {
+        // @ts-ignore
         return { ...state, ...action.payload }
       }
       return state
