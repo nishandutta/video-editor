@@ -1,4 +1,3 @@
-// app/editor/components/AudioEditor.tsx
 'use client'
 
 import { useAppDispatch, useAppSelector } from '@/store/hook'

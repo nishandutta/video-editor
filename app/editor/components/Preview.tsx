@@ -1,4 +1,3 @@
-// app/editor/components/Preview.tsx
 'use client'
 
 import { useAppSelector } from '@/store/hook'
