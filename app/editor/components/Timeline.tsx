@@ -41,7 +41,9 @@ const SceneThumbnail = ({ scene, index }: { scene: any; index: number }) => {
 
   return (
     <div
-      ref={(node) => dragRef(dropRef(node))}
+      ref={(node) => {
+        if (node) dragRef(dropRef(node))
+      }}
       className='relative group cursor-move rounded-lg overflow-hidden border border-gray-300'
     >
       <img
