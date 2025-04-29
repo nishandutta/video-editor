@@ -37,7 +37,9 @@ const Segment = ({ segment, index }: { segment: any; index: number }) => {
 
   return (
     <div
-      ref={(node) => dragRef(dropRef(node))}
+      ref={(node) => {
+        if (node) dragRef(dropRef(node))
+      }}
       className={`relative flex items-center justify-center px-4 py-2 rounded-md font-semibold text-white text-xs shadow-md ${
         segment.muted ? 'bg-gray-400' : 'bg-blue-500'
       } hover:shadow-lg transition-all`}
